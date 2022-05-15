@@ -4,7 +4,6 @@ import android.graphics.drawable.Drawable
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
-import com.task.noteapp.R
 import com.task.noteapp.db.entity.Note
 
 object Singleton {

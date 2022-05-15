@@ -20,7 +20,7 @@ class NoteViewModel(application: Application) : BaseViewModel<BaseNavigator>(app
     var description = ObservableField<String>()
     var imagePath = ObservableField("")
     var readAllData:LiveData<List<Note>>?=null
-    var noDataTextVisiblity=ObservableField(true)
+    var noDataTextVisibility=ObservableField(true)
     var context=application
     fun onClickAction(view: View?) {
         getNavigator().onClickView(view)

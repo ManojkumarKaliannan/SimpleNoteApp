@@ -66,14 +66,13 @@ class MainActivity : BaseActivity<ActivityMainBinding,NoteViewModel>(),BaseNavig
         //observe the database data changes and setting up to the adapter
         noteViewModel.readAllData?.observe(this) { it ->
             if (it.isNotEmpty()) {
-                noteViewModel.noDataTextVisiblity.set(false)
+                noteViewModel.noDataTextVisibility.set(false)
                 getViewDataBinding().noteListRv.adapter = mAdapter
                 mAdapter?.cleatDataSet()
                 mAdapter?.addDataSet( it.sortedByDescending { it.createdDateAndTime })
             } else {
-                noteViewModel.noDataTextVisiblity.set(true)
+                noteViewModel.noDataTextVisibility.set(true)
                 mAdapter?.cleatDataSet()
-                mAdapter?.notifyDataSetChanged()
             }
 
         }
@@ -82,8 +81,7 @@ class MainActivity : BaseActivity<ActivityMainBinding,NoteViewModel>(),BaseNavig
     private fun setupAdapter() {
         mAdapter = BaseRecyclerViewAdapter(
             R.layout.note_item,
-            BR.noteItem, ArrayList(),
-            null, object :OnDataBindCallback<NoteItemBinding>{
+            BR.noteItem, ArrayList(), object :OnDataBindCallback<NoteItemBinding>{
                 override fun onItemClick(
                     view: View,
                     position: Int,

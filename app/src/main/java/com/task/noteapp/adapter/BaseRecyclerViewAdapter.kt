@@ -11,7 +11,6 @@ class BaseRecyclerViewAdapter<T, V : ViewDataBinding>   (@LayoutRes
                                                          private val layoutResourceId: Int,
                                                          private val bindVariableId: Int,
                                                          private val items: MutableList<T>,
-                                                         private var dataVariables: Map<Int,Any>?,
                                                          private val onDataBindCallback: OnDataBindCallback<V>
 ) : androidx.recyclerview.widget.RecyclerView.Adapter<BaseViewHolder<V>>()  {
 

@@ -2,10 +2,8 @@ package com.task.noteapp
 
 import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
-import com.task.noteapp.db.NoteDatabase
 import com.task.noteapp.di.KoinCoreModule
 import org.koin.android.ext.koin.androidContext
-import org.koin.core.Koin
 import org.koin.core.context.startKoin
 
 class NoteApplication : Application() {
