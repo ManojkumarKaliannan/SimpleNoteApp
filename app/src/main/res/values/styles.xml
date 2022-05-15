@@ -1,0 +1,16 @@
+<resources>
+
+    <style name="Widget.Theme.NoteApp.ActionBar.Fullscreen" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="Widget.Theme.NoteApp.ButtonBar.Fullscreen" parent="">
+        <item name="android:background">@color/black_overlay</item>
+        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
+    </style>
+
+    <style name="MyTitleTextApperance" parent="@android:style/TextAppearance">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/mulish_bold</item>
+    </style>
+</resources>

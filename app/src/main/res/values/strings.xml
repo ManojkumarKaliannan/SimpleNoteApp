@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">NoteApp</string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="edited">edited</string>
+    <string name="enter_the_title">Enter the Title</string>
+    <string name="enter_the_description">Enter the Description</string>
+    <string name="save">Save</string>
+    <string name="no_notes_found">No Notes Found</string>
+
+    <string name="update">Update</string>
+    <string name="add_notes">AddNotes</string>
+    <string name="title_empty">Title should not be empty</string>
+    <string name="description_empty">Description should not be empty</string>
+    <string name="no_changes">No changes has been made</string>
+    <string name="enable_permission">Enable Read Permission from Application Setting</string>
+    <string name="something_went_wrong">Something Went Wrong</string>
+
+
+
+
+
 </resources>

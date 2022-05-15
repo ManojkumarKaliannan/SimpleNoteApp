@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="noteVM"
+            type="com.task.noteapp.ui.NoteViewModel" />
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.AddUpdateActivity">
+
+        <androidx.core.widget.NestedScrollView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/save_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="20dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/title_tl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/white"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:hint="@string/enter_the_title"
+                    android:textColorHint="@color/black"
+                    app:hintTextColor="@color/black"
+                    android:elevation="5dp"
+                    tools:ignore="MissingConstraints">
+
+                    <EditText
+                        android:id="@+id/title_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:inputType="text"
+                        android:text="@={noteVM.title}"
+                        android:fontFamily="@font/mulish_regular"
+                        android:autofillHints="username"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        tools:ignore="LabelFor" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/description_tl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/white"
+                    app:layout_constraintTop_toBottomOf="@+id/title_tl"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:hint="@string/enter_the_description"
+                    android:textColorHint="@color/black"
+                    app:hintTextColor="@color/black"
+                    android:elevation="5dp"
+                    tools:ignore="MissingConstraints">
+
+                    <EditText
+                        android:id="@+id/description_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:inputType="textMultiLine"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:text="@={noteVM.description}"
+                        android:fontFamily="@font/mulish_regular"
+                        android:autofillHints="username"
+                        tools:ignore="LabelFor" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/picker_img"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:onClick="@{(v)-> noteVM.onClickAction(v)}"
+                    android:layout_marginTop="30dp"
+                    android:elevation="3dp"
+                    app:customImagePath="@{noteVM.imagePath}"
+                    app:placeholder="@{@drawable/ic_baseline_add_a_photo_24}"
+                    app:layout_constraintTop_toBottomOf="@+id/description_tl" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/save_btn"
+            android:text="@string/save"
+            android:textColor="@color/white"
+            android:background="@color/purple_500"
+            android:onClick="@{(v)-> noteVM.onClickAction(v)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="20dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
